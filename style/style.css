@@ -1,272 +1,284 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-body{
-    font-family: 'Roboto';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.slider{
-    width: 100%;
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.slider {
+    width: 100vw;
     height: 80vh;
-    background-color:black ;
+    overflow: hidden;
+    background-color: black;
 }
-.slider img{
-animation: zoomInOut 10s infinite ease-in-out;    
+
+.slider img {
+    animation: zoomInOut 10s infinite ease-in-out;
 }
+
 @keyframes zoomInOut {
-  0%{
-    transform: scale(1);
-  } 
-  50%{
-    transform: scale(1.1);
-  } 
-  100%{
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
-.dev{
+
+.dev {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: blur(5px);
 }
-.slider-desc{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
-text-align: center;
+
+.slider-desc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
-h1{
- color: #fff;
- font-size:3rem ;   
+
+h1 {
+    color: #fff;
+    font-size: 3rem;
 }
-.slider-desc p{
+
+.slider, .boxed, .flex {
+    max-width: 100%;
+    width: 100%;
+}
+
+.section {
+    height:auto;
+}
+
+.slider-desc p {
     color: #fff;
     font-size: 2rem;
     font-weight: 300;
 }
-.section{
+
+.section {
     padding: 80px 10px;
     margin-top: 20px;
-    height: auto;
     margin-bottom: 50px;
 }
-.boxed{
+
+.boxed {
     max-width: 1280px;
-    margin-inline: auto;
+    margin: auto;
 }
-.flex{
+
+.flex {
     display: flex;
-    
+    flex-wrap: wrap;
 }
-.w32{
+
+.w32 {
     width: 32%;
-}
-.w40{
-    width: 40%;
-   
-}
-.w60{
-    width: 60%;
+    min-width: 250px;
 }
 
-.w60 p{
-    opacity: 0;
-    animation: fadeIn 5s ease-in-out infinite alternate;  
-    text-align: justify;
-    margin-right: 60px;
-    
-}
-/* Animation de vibration */
-
-.flex .w40 h2 {
-    transition: transform 0.5s ease, color 0.5s ease; /* Transition douce pour le mouvement et la couleur */
-    transform: translateY(0); /* Position initiale du titre */
-    color: #000; /* Couleur initiale */
-    margin-left: 100px;
-}
-
-.flex:hover .w40 h2 {
-    transform: translateY(-10px); /* Le titre se déplace légèrement vers le haut */
-    color: #8B4513; /* Change la couleur du titre pendant le survol */
-}
-
-/*animation de changement d'opacity*/
-@keyframes fadeIn {
-   0%{
-    opacity: 1;
-   } 
-   100%{
-    opacity: 0.7;
-   }
-}
-
-h2{
-    font-size: 2rem;
-}
-p{
-    font-size: 1.5rem;
-    line-height: 1.5em;
-}
-.dark{
-  background-color: white;
-  color: #000; 
- 
-
-}
-.w25{
+.w25 {
     width: 25%;
 }
-.skill{
-    
+
+.skill {
     border-radius: 20px;
     padding: 20px;
     box-sizing: border-box;
-    border-radius: 20px;
-    box-sizing: border-box;
-}
-.w25 img {
-    width: 80px;
-    margin-top: 0px;
-    transition: transform 0.5s ease; /* Animation douce */
-    transform: scale(1); /* État initial */
-}
-
-.w25 img:hover {
-    transform: scale(1.6); /* Zoom au survol */
-}
-
-.w25 h2 {
-    transition: transform 0.5s ease, color 0.5s ease; /* Animation pour le mouvement et la couleur */
-    transform: translateY(0); /* Position initiale du titre */
-    color: #000; /* Couleur initiale */
-}
-
-.w25 img:hover + h2 {
-    transform: translateY(-10px); /* Le titre se déplace légèrement vers le haut */
-    color: #8B4513; /* Change la couleur du titre pendant le survol */
-}
-.text-center{
     text-align: center;
-   
 }
-.gap20{
+
+.skill img {
+    width: 80px;
+    transition: transform 0.5s ease;
+}
+
+.skill img:hover {
+    transform: scale(1.6);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.gap20 {
     gap: 20px;
 }
-.space-between{
-    justify-content: space-between;
-}
-.realisation{
+
+.realisation {
     height: auto;
-    animation-play-state: 1/1;
-    position: relative;
-    margin-bottom: 0;
- 
+    margin-bottom: 20px;
+    margin-left: 10px;
 }
-.realisation a{
+
+.boxed h2 {
+    margin-bottom: 40px; 
+    box-shadow: #255ca3;
+}
+
+.realisation a {
     display: block;
     width: 80%;
-    height: 100%;
-    font-family: 'Roboto';
     text-decoration: none;
     color: #000;
-   border-radius: 17px;
-   border: black solid 1px;
-   padding-top: 1px;
-
-   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5)
+    border-radius: 17px;
+    padding: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.realisation img{
-    width: 50%;
-    height: 100%;
-    object-fit: cover; 
-}
-
-.realisation a :hover{
-   color: darkgray; 
-}
-.darkgap20{
-    background-color: #334654;
-    overflow: hidden;
-    padding: 50px 0; /* Ajuste le padding si nécessaire */
-    margin-top: 20px; /* Garde une marge si nécessaire */
-    margin-bottom: 0; /* Supprime la marge en bas */
-    box-sizing: border-box;
-    border-radius: 20px;
-    color: #fff;
-}
-.w40 h2{
-   
-    margin-left:10  0px ;
-}
-.boxed a {
-    text-decoration: none;
-   
-    
-}
-
-.boxed a i {
-    margin-right: 8px; 
-    color: #fff;
-    size: 300px;
-   
-}
-.icon {
-    font-size: 24px; /* Ajuste la taille ici */
-    margin-right: 8px; /* Ajoute un espacement à droite */
-    vertical-align: middle; /* Aligne l'icône avec le texte */
-    
-}
-.boxed span{
- color: #fff; 
- font-size: 2rem; 
-  
-}
-@media screen and (max-width: 900px) {
-   .realisation img {
-    width: 80%;
+.realisation img {
+    width: 100%; /* Les images s'ajustent à 100% de leur conteneur */
     height: auto;
-   }
-   .skill {
-    display: block;
-    flex-direction: column;
-    width: 17%;
-    gap: 10px;
-   
-  }
 }
+
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+}
+
+.dark {
+    background-color: white;
+    color: #000;
+}
+
+.darkgap20 {
+    height: auto; /* Ajuster la hauteur */
+    padding: 50px 10px;
+    margin: 0;
+    background-color: #334654;
+    color: #fff;
+}
+
+.custom-footer {
+    background-color: #222; 
+    color: #fff; 
+    padding-bottom: 30px; 
+    text-align: center;
+    border-radius: 20px;
+}
+
+.darkgap20 a {
+    color: #fff;
+    margin: 0 20px; /* Espace entre les icônes */
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.custom-footer a:hover {
+    color: lightgray;
+}
+
+@media(max-width: 600px) {
+    .slider img {
+        height: 50vh; 
+    }
+
+    .w32, .w25 {
+        width: 100%; 
+    }
+
+    .slider-desc h1 {
+        font-size: 2rem; 
+    }
+
+    .slider-desc p {
+        font-size: 1.5rem; 
+    }
+
+    .darkgap20 {
+        padding: 30px 10px; /* Ajuste le padding pour les petits écrans */
+    }
+}
+
+@media(max-width: 900px) {
+    .w40, .w60, .w25, .w32 {
+        width: 100%; 
+        margin: 0; 
+    }
+
+    .w40 h2 {
+        float: left;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .w60 p {
+        display: block;
+        width: 70%;
+        text-align: justify;
+    }
+
+    .boxed h2 {
+        float: left;
+        font-size: 2rem;
+        margin-bottom: 20vh;
+    }
+
+    .w25 img {
+        float: left;
+    }
+
+    .w32 {
+        flex-direction: column;
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+
+    .w32 img {
+        max-width: 80%; 
+        height: auto;
+    }
+
+    .section {
+        height: auto; /* Ajusté la hauteur pour éviter un chevauchement */
+        margin-bottom: 0;
+    }
+}
+
 /* Styles pour l'écran de chargement */
 #loader {
-    position: fixed; /* Fixe le loader en haut de la page, pour qu'il couvre tout l'écran */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Le loader prend toute la largeur de l'écran */
-    height: 100%; /* Le loader prend toute la hauteur de l'écran */
-    background-color: rgba(48, 45, 45, 0.9); /* Fond blanc semi-transparent */
-    display: flex; /* Utilisation de flexbox pour centrer le contenu */
-    justify-content: center; /* Centrage horizontal */
-    align-items: center; /* Centrage vertical */
-    z-index: 9999; /* Place le loader au-dessus de tout le reste du contenu */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(48, 45, 45, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-/* La barre de progression du loader */
 #progress {
-    width: 0; /* Commence à 0%, la largeur augmentera avec le chargement */
-    height: 20px; /* Hauteur de la barre de progression */
-    background-color: #255ca3; /* Couleur de la barre de progression (vert) */
-    border-radius: 5px; /* Coins arrondis pour un effet visuel plus agréable */
-    transition: width 0.3s ease; /* Animation douce quand la barre se remplit */
+    width: 0;
+    height: 20px;
+    background-color: #255ca3;
+    border-radius: 5px;
+    transition: width 0.3s ease;
 }
 
-/* Le texte du pourcentage de chargement */
 #percentage {
-    position: absolute; /* Positionne le texte au centre, au-dessus de la barre */
-    font-size: 24px; /* Taille de la police du pourcentage */
-    color: #333; /* Couleur du texte (gris foncé) */
+    position: absolute;
+    font-size: 24px;
+    color: #333;
 }
 
-/* Masque le loader quand le chargement est terminé */
 #loader.hidden {
-    display: none; /* Cache complètement le loader */
+    display: none;
 }
-

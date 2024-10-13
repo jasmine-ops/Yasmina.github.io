@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 body, html {
-    font-family:'Roboto' ;
+    font-family: 'Roboto';
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden; /* Évite le défilement de la page */
-    background-color:#ebebeb;
+    background-color: #ebebeb;
 }
 
 .title-banner {
     position: relative;
-    overflow: hidden;
     width: 100%;
-    background-color:#fbb345 ;
+    background-color: #fbb345;
     animation: slideDownUp 5s forwards;
     height: 300px; /* Hauteur initiale pendant l'animation */
     border-radius: 20px;
+    z-index: 3;
+
 }
 
 @keyframes slideDownUp {
@@ -42,66 +42,63 @@ body, html {
     line-height: 50px;
     font-size: 5rem;
     color: aliceblue;
-    margin-right: 600px;
-    margin-top: 100px;
+    margin: 0; /* Enlève les marges pour éviter le débordement */
+    padding-top: 50px; /* Ajuste l'espacement */
+    
+    animation: fadeOut 2s forwards 3s; /* Apparition et disparition après 3 secondes */
 }
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1; /* Visible au début */
+    }
+    100% {
+        opacity: 0; /* Deviens invisible à la fin */
+    }
+}
+
 
 .container {
     display: flex;
-    align-items: flex-start;
+    flex-direction: column; /* Aligne les éléments verticalement par défaut */
+    align-items: center; /* Centre les éléments horizontalement */
     padding: 20px;
-    height: calc(100vh - 1000px); /* Réduit la hauteur du container pendant l'animation */
     box-sizing: border-box;
     overflow: auto;
-    height: 100%;
-    transition: height 0.5s ease; /* Transition douce lorsque la hauteur change */
-    gap: 30px;
 }
 
-/* Applique une nouvelle hauteur après l'animation */
-body.animate-complete .container {
-    height: calc(100vh - 50px); /* Ajuste selon la nouvelle taille après animation */
-}
-section{
-    width: 2000px;
-}
 .description {
-    width: 700px;
-    margin-top: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    max-width: 700px; /* Fixe une largeur maximale */
+    margin: 10px 0;
     color: #434648;
-    line-height: 30px;
+    line-height: 1.5; /* Utiliser une valeur relative pour l'espacement */
     font-weight: bold;
 }
 
 .carousel {
-    width: 80%;
-    margin-left: 20px;
-    margin-top: 10px;
-    height: 50%;
-    overflow: hidden; 
-    margin-left: 200px;
+    width: 80%; /* Utilise toute la largeur disponible */
+    overflow: hidden;
+    margin-left: 150px;
+    margin-top: 20px;
 }
+
 .carousel img {
     width: 100%;
     display: block;
-    margin-bottom: 10px;
-    height: 40%;
-    gap: 60px;
-    border-radius: 20px;
+    height: auto; /* Garde le ratio d'aspect */
     margin-bottom: 20px;
+    border-radius: 20px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); 
 }
 
 .carousel img:hover {
-    transform: scale(1.1); /* Zoome l'image à 110% au survol */
+    transform: scale(1.1); /* Zoom sur l'image au survol */
 }
+
 .btn-home {
     display: inline-block;
     padding: 10px 20px;
-    background-color:olive ; /* Couleur du bouton */
+    background-color: olive; /* Couleur du bouton */
     color: white; /* Couleur du texte */
     text-align: center;
     text-decoration: none; /* Enlève le soulignement du lien */
@@ -111,5 +108,25 @@ section{
 }
 
 .btn-home:hover {
-    background-color:cadetblue; /* Couleur du bouton lors du survol */
+    background-color: cadetblue; /* Couleur du bouton lors du survol */
+}
+
+/* Media Queries pour responsivité */
+@media (max-width: 900px) {
+    .title-banner {
+        height: 200px; /* Hauteur de la bannière pour les petits écrans */
+    }
+
+    .title-banner h1 {
+        font-size: 2.5rem; /* Réduit la taille du texte sur petits écrans */
+        margin-top: 30px; /* Ajuste le marges pour le titre */
+    }
+
+    .description {
+        padding: 0 10px; /* Ajuste les marges pour les petits écrans */
+    }
+
+    .carousel {
+        margin: 10px; /* Ajuste la marge */
+    }
 }

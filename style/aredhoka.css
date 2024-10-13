@@ -1,173 +1,182 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 body, html {
-    font-family:'Roboto' ;
+    font-family: 'Roboto';
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden; /* Évite le défilement de la page */
-   background-color: #f5f5dc;
+   
+    background-color: #f0dcf5;
+    
 }
-.banner{
+
+.banner {
     position: absolute;
     top: 0;
     left: -100%;
-    height: 100%;
-    width: 1400px;
+    height:100%;
+    width: 100%; /* Changer à 100% pour s'adapter à toutes les largeurs */
     background-color: #14333e;
     display: flex;
     justify-content: center;
     padding: 20px;
     text-align: center;
-    font-size: 24px;
+    font-size: 15px;
     animation: slideInOut 3s ease-in-out forwards;
     border-radius: 20px;
     z-index: 3;
 }
+
 @keyframes slideInOut {
     0% {
-      left: -100%; /* La bannière commence à gauche */
-      visibility: visible;
+        left: -100%;
+        visibility: visible;
     }
     20% {
-      left: 0; /* La bannière entre complètement */
-      visibility: visible;
+        left: 0;
+        visibility: visible;
     }
     80% {
-      left: 0; /* Elle reste visible un moment */
-      visibility: visible;
+        left: 0;
+        visibility: visible;
     }
     100% {
-      left: -100%; /* Puis elle se cache à gauche */
-      visibility: hidden;
+        left: -100%;
+        visibility: hidden;
     }
-  }
-  .banner h1{
-   font-size: 7rem;
-   margin: 0;
-   padding: 200px;
-   color: white;
+}
 
-  }
- 
-  .container {
+.banner h1 {
+    font-size: 7rem;
+    margin: 0;
+    padding: 200px;
+    color: white;
+}
+
+.container {
     display: flex;
     align-items: flex-start;
     padding: 20px;
     box-sizing: border-box;
-    overflow: auto;
-    height: 100%;
-    transition: height 0.5s ease; /* Transition douce lorsque la hauteur change */
-    width: 100%;
+    overflow: hidden; /* Ajusté pour ne pas afficher le défilement */
+    height: auto;
     background-color: darkslategrey;
-    
-    
 }
-aside{
-  width: 20%;
+
+aside {
+    width: 100%; /* Prendre 100% pour la version mobile */
+    max-width: 300px; /* Limite la largeur en PC */
+    margin-right: 20px;
 }
 
 .description {
-    width: 100%;
     margin-top: 10px;
-   
 }
-.description h2{
-   font-size: 2rem;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: relative;
+
+.description h2 {
+    font-size: 2rem;
     color: white;
-    
-    transform: translateY(0);  
-    transition: transform 0.5s ease, color 0.5s ease; 
 }
-.description h2:hover{
-  transform: translateY(-40px); 
+
+.description p {
+    width: 85%;
+    text-align: justify;
+    color: white;
+    line-height: 30px;
 }
-.description p{
-  display: flex;
-  width: 85%;
-  text-align: center;
-  color: white;
-  text-align: justify;
-  line-height: 30px;
- 
-    transform: translateY(0);  
-    transition: transform 0.5s ease, color 0.5s ease;
+
+section {
+    flex: 1; /* Prendre l'espace restant */
+    overflow: hidden; /* Évite le débordement */
 }
-.description p:hover{
-  transform: translateY(-30px); 
-}
-section{
-  width: 3000px;
-}
+
 .carousel {
     width: 100%;
-    float: right;
-   position: relative;
+    position: relative;
     overflow: hidden;  
+    margin-top: 50px;
 }
+
 .carousel-track {
-   display: flex;
-   transition: transform 0.5s ease;
-   margin-top: 100px;
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .carousel-image {
-    width: 100%;
+    width: 100%; /* Assure que les images prennent toute la largeur */
     height: auto;
     border-radius: 20px;
     flex-shrink: 0;
-      
 }
+
 .carousel-button {
-    position: absolute; /* Positionne les boutons sur le carrousel */
-    top: 50%; /* Centre verticalement */
-    transform: translateY(-50%); /* Centre le bouton */
-    background-color: rgba(255, 255, 255, 0.7); /* Arrière-plan léger */
-    border: none; /* Enlève la bordure */
-    padding: 10px; /* Espace autour du bouton */
-    cursor: pointer; /* Change le curseur */
-    z-index: 1; /* S'assure que le bouton est au-dessus du carrousel */
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);   
-  }
-  .prev {
-    left: 10px; /* Positionne le bouton précédent */
-  }
-  .next {
-    right: 10px; /* Positionne le bouton suivant */
-  }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 .btn-home {
     display: inline-block;
     padding: 10px 20px;
-    background-color:#e5e759  ; /* Couleur du bouton */
-    color: white; /* Couleur du texte */
+    background-color: #e5e759;
+    color: white;
     text-align: center;
-    text-decoration: none; /* Enlève le soulignement du lien */
+    text-decoration: none;
     border-radius: 5px;
     font-size: 1.2rem;
-    transition: background-color 0.3s ease; /* Ajoute une transition pour un effet fluide */
+    transition: background-color 0.3s ease;
 }
-h3{
-  color: white;
-  
-  transform: translateY(0);  
-  transition: transform 0.5s ease, color 0.5s ease; 
-}
-h3:hover{
-  transform: translateY(-20px); 
+
+h3, li {
+    color: white;
 }
 li{
-  color: white;
-  line-height: 30px;
-  transform: translateY(0);  
-  transition: transform 0.5s ease, color 0.5s ease; 
+  line-height: 20px;
 }
-li:hover{
-  transform: translateY(-10px); 
-}
-.btn-home:hover {
-    background-color: #cabe0f; /* Couleur du bouton lors du survol */
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Aligne les éléments verticalement */
+        height: auto; /* Ajuste la hauteur du container */
+    }
+    .banner h1 {
+      font-size: 2rem;
+    }
+
+    aside {
+        width: 100%; /* Prend toute la largeur */
+        margin-bottom: 20px; /* Ajoute un espacement en bas */
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .carousel {
+        margin-top: 20px; /* Ajuste la marge pour le carrousel */
+        width: 100%;
+    }
+
+    .carousel-image {
+        width: 100%; /* Assure que les images prennent 100% de la largeur */
+        height: auto; /* Maintient le ratio d'aspect */
+    }
+
+    .btn-home {
+        width: 100%; /* Les boutons prennent toute la largeur */
+        margin-top: 10px; /* Ajoute un espacement en haut */
+    }
 }
